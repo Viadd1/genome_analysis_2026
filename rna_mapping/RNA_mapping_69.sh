@@ -16,8 +16,6 @@ OUTPUTDIR=/home/daer9945/Genome_Analysis/data/6_rna_mapping
 
 bwa index $GENOME
 bwa mem $GENOME $SERUMDATA/ERR1797969_trimmed_1P.fastq.gz $SERUMDATA/ERR1797969_trimmed_2P.fastq.gz | samtools view -Sb - > $OUTPUTDIR/paired_69.bam
-cat $SERUMDATA/ERR1797969_trimmed_1U.fastq.gz $SERUMDATA/ERR1797969_trimmed_2U.fastq.gz | bwa mem $GENOME - | samtools view -Sb - > $OUTPUTDIR/unpaired_69.bam
 
-samtools merge $OUTPUTDIR/merged_unsorted.bam $OUTPUTDIR/paired_69.bam $OUTPUTDIR/unpaired_69.bam
-samtools sort -@ 8 -o $OUTPUTDIR/final_mapped_69.bam $OUTPUTDIR/merged_unsorted.bam
-samtools index $OUTPUTDIR/final_mapped.bam
+samtools sort -@ 8 -o $OUTPUTDIR/final_mapped_69.bam $OUTPUTDIR/paired_69.bam
+samtools index $OUTPUTDIR/final_mapped_69.bam
