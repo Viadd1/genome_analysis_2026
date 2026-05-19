@@ -49,4 +49,4 @@ EnhancedVolcano(res,
                 y = 'padj',
                 pCutoff = 1e-05,
                 labSize = 3,
-                title = 'State 1 vs State 2 Differential Expression')
+                title = 'BHI vs Serum Differential Expression')
