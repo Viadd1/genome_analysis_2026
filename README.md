@@ -1,1 +1,5 @@
 # genome_analysis
+
+In this project, the genome assembly and some of the analyses performed by Zhang _et al._ (2017) on the bacterial strain _Enterococcus faecium_ E745 have been replicated using recent genome analysis software and methods. After assembling the genome from PacBio reads, the assembly was evaluated and annotated, and antibiotic resistance genes were identified. In addition, raw RNA-seq reads from _E. faecium_ bacteria grown in rich medium and human serum, respectively, were trimmed and mapped to the assembled genome, and a subsequent differential expression analysis was performed to identify genes that enable growth of the bacteria in human bloodstreams.
+
+All code used for the project can be found here, and the documentation and biological interpretations of the project can be found in the adjacent GitHub Wiki. All the analyses were performed by writing bash scripts and were run on the UPPMAX HPC cluster, except the differential expression analysis which was run locally in RStudio. In addition, the identification of antibiotic resistance genes and homology searches were performed using online tools.
