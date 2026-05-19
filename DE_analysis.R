@@ -35,6 +35,7 @@ rownames(res) <- data_BH[, 1]
 
 res_ordered <- res[order(res$padj), ]
 head(res_ordered, 100)
+write.csv(as.data.frame(res_ordered), file="deseq2_results_ordered.csv")
 
 # Variance stabilizing transformation (removes variance bias in low counts)
 vsd <- vst(dds, blind=FALSE)
@@ -46,5 +47,6 @@ EnhancedVolcano(res,
                 lab = rownames(res),
                 x = 'log2FoldChange',
                 y = 'padj',
+                pCutoff = 1e-05,
                 labSize = 3,
                 title = 'State 1 vs State 2 Differential Expression')
